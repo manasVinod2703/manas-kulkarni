@@ -1,13 +1,399 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+body{
+    font-family: 'Roboto Slab', serif;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+.home-section{
+    display: flex;
+    max-width: 100%;
+}
+
+/* The navbar*/
+.navbar {
+  height: 180px;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.navbar.active{
+    width: 80%;
+}
+
+/*logo*/
+.logo{
+    
+    overflow : hidden;
+    width : 80%;
+    display: flex;
+    align-items: center ;
+    padding: 10px;
+    
+}
+
+.logo img {
+  width: 160px;
+  height: 80%;
+  overflow: hidden;
+  display: block;
+  position: relative;
+
+  
+}
+
+.outer-circle{
+    width: 50px;
+    background-color: transparent;
+    height: 50px;
+    border: 2px solid #B1C949;
+    display: block;
+    position: relative;
+    right: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition : all 0.3s cubic-bezier(0.19, 1, 0.22, 1)
+ 
+}
+
+.line{
+    width: 20px;
+    background-color: #B1C949;
+    height: 4px;
+    margin: 5px 0;
+    display: block;
+    position: relative;
+    left: 13px;
+    top: 7px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.outer-circle:hover{
+    transform: scale(1.5);
+}
+
+.home{
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    
+}
+
+.home.active{
+    width: 80%;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.main-section{
+    display: flex;
+}
+
+.left-section{
+    width: 50%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.left-section h1{
+    color: white;
+    font-size: 5em;
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    margin: 0 auto;
+    border-right: 0.1em solid orange; 
+    white-space: nowrap;
+    letter-spacing: 0.08em; /* Adjust as needed */
+    animation: 
+    typing 6.5s steps(30, end) infinite ,
+    blink-caret .75s step-end infinite;
+    overflow: hidden;
+    background: linear-gradient(to right, #B1C949,
+                    #C0136A);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+    
+
+        
+            
+}
+
+.left-section h2{
+    color: #DACFCB;
+    font-size: 2.5em;
+    display: block;
+    position: relative;
+    top: 10px;
+}
+
+.job::after{
+    content: "Software Developer";
+    animation: changeJob 10s infinite  linear;
+    
+}
+
+.home-button{
+    
+    display :block;
+    position: relative;
+    top: 50px;
+    padding: 15px 25px;
+    background: #11998e;
+    border-radius: 20px;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #B1C949, #C0136A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #B1C949, #C0136A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-size: larger;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.home-button:hover{
+    transform: scale(1.2);
+}
+    
+
+
+
+
+
+.right-section{
+    width: 40%;
+    display: flex;
+    
+    justify-content: center;
+}
+
+.img-container{
+    
+    position: relative;
+    top: 35%;
+    left: 20%;
+    height: 40%;
+    width: 80%;
+    
+}
+    
+    
+    
+
+.img-container img{
+    width: 80%;
+    padding: 5px;
+    box-shadow: -20px 0px 30px #B1C949, -22px 0px 40px #C0136A;
+    border-radius: 15px;
+}
+
+
+
+
+/*Animations*/
+
+/*typing effect*/
+@keyframes typing {
+    from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+@keyframes changeJob {
+    0%{
+        content : "Software Developer"
+    }
+    25%{
+        content : "Full Stack Developer"
+    }
+    50%{
+        content : "Graphic Designer"
+    }
+    75%{
+        content : "Data Science"
+    }
+    100%{
+        content : "BloackChain Developer"
+    }
+}
+
+
+.container{
+    display: none;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    background-color: #B1C949;
+}
+
+.container.active{
+    display: block;
+    position: relative;
+    
+    
+    width: 20%;
+    border: 2px solid wheat;
+   height: 100vh;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.menu{
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 50px;
+    position: relative;
+    top: 150px;
+    
+
+    
+}
+
+.menu li{
+    width: 100%;
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    transition : all 0.3s ease;
+    
+    
+}
+
+
+
+.menu li:hover{
+    background-color: #C0136A;
+    color: white;
+    cursor: pointer;
+    transform:scale(0.9);
+}
+
+.close{
+    display: none;
+}
+
+
+
+@media(max-width : 1024px){
+    .container.active{
+        width: 100%;
+        position: absolute;
+        right: 0;
+        height: 100%;
+       
+    }
+
+   
+    .home{
+        display: flex;
+        width: 100%;
+    }
+
+    .container{
+        display: no;
+    }
+
+    .main-section{
+        width: 100%;
+    }
+    
+
+    .home.active{
+        display: none;
+    }
+    .close{
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar{
+        width: 100%;
+        z-index: 1;
+        
+    }
+  
+    .main-section{
+        position: relative;
+        
+        top: 180px;
+        width: 100%;
+    }
+    
+
+    .right-section{
+        display: none;
+    }
+    
+    
+
+    .left-section{
+        display: relative;
+        
+        width: 100%;
+    }
+
+    .left-section h1{
+        text-align: center;
+        font-size: 3em;
+    }
+
+    .left-section h2{
+        font-size: 2em;
+        width: fit-content;
+    }
+
+    
+}
+
+@media (max-width : 481px){
+    .left-section h1{
+        font-size: 2rem;
+        animation: 
+    typingPhone 3.5s steps(30, end) infinite ,
+    blink-caret .75s step-end infinite;
+    }
+
+    /*typing effect*/
+@keyframes typingPhone {
+    from { width: 0 }
+  to { width: 80% }
+}
+
+
+
+
+}
+
+
+
+.loading{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
