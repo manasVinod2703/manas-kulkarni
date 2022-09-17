@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/manas-kulkarni/static/css/main.848a174f.css",
+    "main.js": "/manas-kulkarni/static/js/main.aa18ce18.js",
+    "static/media/secimg.jpg": "/manas-kulkarni/static/media/secimg.552ca03066a46dba1b09.jpg",
+    "static/media/M.png": "/manas-kulkarni/static/media/M.a91c62a9e48716b80ad2.png",
+    "index.html": "/manas-kulkarni/index.html",
+    "main.848a174f.css.map": "/manas-kulkarni/static/css/main.848a174f.css.map",
+    "main.aa18ce18.js.map": "/manas-kulkarni/static/js/main.aa18ce18.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.848a174f.css",
+    "static/js/main.aa18ce18.js"
+  ]
+}
